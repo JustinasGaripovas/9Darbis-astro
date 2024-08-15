@@ -1,0 +1,124 @@
+---
+export const prerender = false
+
+import LineTodo from "@/components/sections/projects/todo/LineTodo.astro";
+import CardBlog from "@/components/ui/cards/CardBlog.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+
+const { id } = Astro.params;
+
+const todo1 = {
+  title: 'General Estimation and Plan',
+  progressStatus: 'Done',
+  deadlineDate: "March 17, 2023",
+  person: "Leslie Alexander",
+  flexIndent: "w-1/24",
+  settingsUrl: ""
+}
+
+const todo2 = {
+  title: 'Detailed Estimation and Plan',
+  progressStatus: 'Done',
+  deadlineDate: "March 19, 2023",
+  person: "Leslie Alexander",
+  flexIndent: "w-1/12"
+}
+
+const todo3 = {
+  title: 'Designer',
+  progressStatus: 'Done',
+  deadlineDate: "March 29, 2023",
+  person: "Leslie Alexander",
+  flexIndent: "w-1/12"
+}
+
+const todo4 = {
+  title: 'Electrical Phase 1',
+  progressStatus: 'In Progress',
+  deadlineDate: "April 03, 2023",
+  person: "Leslie Alexander",
+  flexIndent: "w-1/24"
+}
+
+const todo4x1 = {
+  title: 'Electrical Inspection',
+  progressStatus: 'Planned',
+  deadlineDate: "April 04, 2023",
+  person: "Leslie Alexander",
+  flexIndent: "w-1/24"
+}
+
+const todo5 = {
+  title: 'Bath Toilet and Shower piping',
+  progressStatus: 'Planned',
+  deadlineDate: "April 10, 2023",
+  person: "Leslie Alexander",
+  flexIndent: "w-1/12"
+}
+
+const todo6 = {
+  title: 'Floor Sound Insulation and Sound Proofing',
+  progressStatus: 'Planned',
+  deadlineDate: "April 14, 2023",
+  person: "Leslie Alexander",
+  flexIndent: "w-1/24"
+}
+
+const todo7 = {
+  title: 'Pouring cement floor',
+  progressStatus: 'Planned',
+  deadlineDate: "April 14, 2023",
+  person: "Leslie Alexander",
+  flexIndent: "w-1/24"
+}
+
+---
+
+<MainLayout>
+  <section
+    class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
+  >
+
+  <section
+  class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
+>
+  <!--Page header-->
+  <div class="mx-auto max-w-3xl text-left sm:text-center">
+    <h3
+      class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+    >
+      Buto Renovacija
+    </h3>
+
+    <p
+    class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
+    >
+     Kaunas, Birzelio 23-sios g. 3-32
+  </p>
+
+    <p
+      class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
+    >
+      Here you can see your current projects and checkup on progress of them.
+    </p>
+  </div>
+</section>
+
+<hr/>
+ 
+  <ul role="list" class="divide-y divide-gray-100">
+    
+    <LineTodo todoEntry={todo1}/>
+    <LineTodo todoEntry={todo2}/>
+    <LineTodo todoEntry={todo3}/>
+    <LineTodo todoEntry={todo4}/>
+    <LineTodo todoEntry={todo4x1}/>
+    <LineTodo todoEntry={todo5}/>
+    <LineTodo todoEntry={todo6}/>
+    <LineTodo todoEntry={todo7}/>
+    
+  </ul>
+  
+
+  </section>
+</MainLayout>
