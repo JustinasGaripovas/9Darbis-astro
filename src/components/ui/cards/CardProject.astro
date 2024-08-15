@@ -1,0 +1,62 @@
+---
+// Import necessary components and utilities
+
+const { projectEntry, projectLocale = "" } = Astro.props;
+
+interface Props {
+  projectEntry: {
+    slug: string;
+    title: string;
+    description: string;
+    cardImage: string;
+    cardImageAlt: string;
+    iconUrl: string;
+  };
+  projectLocale?: string;
+}
+---
+
+<a
+  class="group relative block rounded-xl outline-none ring-zinc-500 transition duration-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
+  href={projectLocale !== ""
+    ? `/${projectLocale}/project/${projectEntry.slug}/`
+    : `/project/${projectEntry.slug}/`}
+  data-astro-prefetch
+>
+  <!-- The container for the project post's cover image. Uses astro:assets' Image for image source -->
+  <div
+    class="relative h-[350px] w-full flex-shrink-0 overflow-hidden rounded-xl before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-neutral-900/[.7]"
+  >
+    <img
+      class="absolute start-0 top-0 size-full object-cover transition duration-500 group-hover:scale-110"
+      src={projectEntry.cardImage}
+      alt={projectEntry.cardImageAlt}
+      draggable={"false"}
+      loading={"eager"}
+    />
+  </div>
+  <!-- The container for the project author's avatar and associated metadata (author name and publication date) -->
+  <div class="absolute inset-x-0 top-0 z-10">
+    <div class="flex h-full flex-col p-4 sm:p-6">
+      <div class="flex items-center">
+        <div class="ms-2.5 sm:ms-4">
+          <h4 class="font-bold text-neutral-50">"Author"</h4>
+          <p class="text-xs text-neutral-50/[.8]">"Date"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- The container for the project post's title and description -->
+  <div class="absolute inset-x-0 bottom-0 z-10">
+    <div class="flex h-full flex-col p-4 sm:p-6">
+      <h3
+        class="text-balance text-lg font-bold text-neutral-50 group-hover:text-neutral-50/[.8] sm:text-3xl"
+      >
+        {projectEntry.title}
+      </h3>
+      <p class="mt-2 text-pretty text-neutral-50/[.8]">
+        {projectEntry.description}
+      </p>
+    </div>
+  </div>
+</a>
