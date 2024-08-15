@@ -1,0 +1,17 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/MainLayout.astro";
+
+const { id } = Astro.params;
+---
+
+<MainLayout>
+  <section
+    class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
+  >
+    {id}
+
+    
+  </section>
+</MainLayout>
