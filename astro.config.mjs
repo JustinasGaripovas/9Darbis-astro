@@ -5,6 +5,8 @@ import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
 
+import vercel from "@astrojs/vercel/serverless";
+
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
@@ -135,10 +137,10 @@ export default defineConfig({
     gzip: false,
     brotli: true
   })],
-  output: "static",
+  output: "hybrid",
   experimental: {
     clientPrerender: true,
     directRenderScript: true
   },
-  adapter: vercelStatic(),
+  adapter: vercel()
 });

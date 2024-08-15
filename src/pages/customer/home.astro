@@ -1,0 +1,42 @@
+---
+import CardBlog from "@/components/ui/cards/CardBlog.astro";
+import MainLayout from "@/layouts/MainLayout.astro"
+import { getEntry } from "astro:content";
+
+const post1 = await getEntry("blog", "en/post-1");
+const post2 = await getEntry("blog", "en/post-2");
+
+---
+<MainLayout
+title={"pageTitle"}
+>
+<section
+  class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
+>
+  <!--Page header-->
+  <div class="mx-auto max-w-3xl text-left sm:text-center">
+    <h1
+      class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+    >
+      Title
+    </h1>
+
+    <p
+      class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
+    >
+      Sub
+    </p>
+  </div>
+</section>
+
+<section
+  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+  <!--Blog posts grid-->
+  <div class="grid gap-6 lg:grid-cols-2">
+    <CardBlog blogEntry={post1}/>
+    <CardBlog blogEntry={post2}/>
+  </div>
+</section>
+
+</MainLayout>
