@@ -1,6 +1,7 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import CardProject from "../../components/ui/cards/CardProject.astro";
+import PrimaryCTA from "@/components/ui/buttons/PrimaryCTA.astro";
 
 const project1 = {
   slug: "1232-8329-1233-0948",
@@ -37,15 +38,19 @@ const project3 = {
       <h1
         class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
       >
-        Dabartiniai Projektai
+        Current Projects
       </h1>
 
       <p
-        class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
+        class="mt-4 pb-8 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
       >
         Here you can see your current projects and checkup on progress of them.
       </p>
+
+      <PrimaryCTA title={"Create a new Project!"} url={"/project/new"} />
+
     </div>
+
   </section>
 
   <section

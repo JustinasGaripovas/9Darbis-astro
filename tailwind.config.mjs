@@ -30,6 +30,10 @@ export default {
         600: "#ea580c",
       }, // Primary colors, used mainly for links, buttons and svg icons
       red: colors.red, // Used for bookmark icon
+      gray: colors.gray, // 
+      green: colors.green, // 
+      blue: colors.blue, // 
+      black: colors.black, // 
       zinc: colors.zinc, // Used mainly for box-shadow
     },
     extend: {},
