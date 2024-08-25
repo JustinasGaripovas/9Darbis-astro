@@ -21,6 +21,7 @@
     "@preline/dropdown": "^2.4.1",
     "@preline/overlay": "^2.4.1",
     "@preline/tabs": "^2.4.1",
+    "@supabase/supabase-js": "^2.45.2",
     "@vercel/nft": "^0.27.3",
     "astro": "^4.14.2",
     "astro-compressor": "^0.4.1",

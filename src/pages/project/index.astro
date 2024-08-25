@@ -2,12 +2,18 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import CardProject from "../../components/ui/cards/CardProject.astro";
 import PrimaryCTA from "@/components/ui/buttons/PrimaryCTA.astro";
+import { supabase } from "@/lib/supabase";
+
+const { data, error } = await supabase.from("project").select("*");
+
+console.log(data, error);
 
 const project1 = {
   slug: "1232-8329-1233-0948",
   title: "Namo Statyba",
   description: "Alytus, Barlonio 3",
-  cardImage: "https://c8.alamy.com/comp/A5M5HG/excavating-foundation-for-random-house-building-at-in-new-york-city-A5M5HG.jpg",
+  cardImage:
+    "https://c8.alamy.com/comp/A5M5HG/excavating-foundation-for-random-house-building-at-in-new-york-city-A5M5HG.jpg",
   cardImageAlt: "image",
   iconUrl: "",
 };
@@ -15,7 +21,8 @@ const project2 = {
   slug: "0098-3213-1233-1233",
   title: "Buto Renovacija",
   description: "Kaunas, Birzelio 23-iosios 3 32",
-  cardImage: "https://www.usnews.com/object/image/0000018a-3d69-db4c-adab-7f7d8b4d0000/gettyimages-1433147266.jpg?update-time=1693247509991&size=responsive640",
+  cardImage:
+    "https://www.usnews.com/object/image/0000018a-3d69-db4c-adab-7f7d8b4d0000/gettyimages-1433147266.jpg?update-time=1693247509991&size=responsive640",
   cardImageAlt: "image",
   iconUrl: "",
 };
@@ -23,7 +30,8 @@ const project3 = {
   slug: "3333-9832-1233-7777",
   title: "Ligonines Renovacija",
   description: "Kaunas, Virsulio al. 188",
-  cardImage: "https://images.adsttc.com/media/images/6567/b43f/ad68/bf77/f85a/cbd5/large_jpg/damin-school-renovation-special-education-school-campus-renewal-real-architects_22.jpg?1701295182",
+  cardImage:
+    "https://images.adsttc.com/media/images/6567/b43f/ad68/bf77/f85a/cbd5/large_jpg/damin-school-renovation-special-education-school-campus-renewal-real-architects_22.jpg?1701295182",
   cardImageAlt: "image",
   iconUrl: "",
 };
@@ -42,15 +50,13 @@ const project3 = {
       </h1>
 
       <p
-        class="mt-4 pb-8 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
+        class="mt-4 text-pretty pb-8 text-lg text-neutral-600 dark:text-neutral-400"
       >
         Here you can see your current projects and checkup on progress of them.
       </p>
 
       <PrimaryCTA title={"Create a new Project!"} url={"/project/new"} />
-
     </div>
-
   </section>
 
   <section
