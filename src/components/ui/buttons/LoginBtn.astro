@@ -28,8 +28,9 @@ const userSVG = `<svg
   </svg>`;
 ---
 
-<button
+<a
   type="button"
+  href="https://dev-genreno.eu.auth0.com/authorize?response_type=code&client_id=h5ffNmJ2nJL0SRIBSCTHmZf7OJLACqOr&redirect_uri=http://192.168.0.121:4321/security/oauth&scope=openid%20profile&state=xyzABC123"
   class={`${baseClasses} ${hoverClasses} ${darkClasses} ${mdClasses} ${txtSizeClasses}`}
   data-hs-overlay="#hs-toggle-between-modals-login-modal"
 >
@@ -37,4 +38,4 @@ const userSVG = `<svg
 
   <Fragment set:html={userSVG} />
   {title}
-</button>
+</a>
